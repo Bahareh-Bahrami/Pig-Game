@@ -1,25 +1,32 @@
 'use strict';
 //Selecting Elements
-const scoreEl0 = document.querySelector('#score--0');
-const scoreEl1 = document.getElementById('score--1');
-const currentEl0 = document.getElementById('current--0');
-const currentEl1 = document.getElementById('current--1');
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
+
+const score0El = document.querySelector('#score--0');
+const score1El = document.getElementById('score--1');
+
+const current0El = document.getElementById('current--0');
+const current1El = document.getElementById('current--1');
+
 const diceEl = document.querySelector('.dice');
+
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 //Start Condition
-scoreEl0.textContent = 0;
-scoreEl1.textContent = 0;
+score0El.textContent = 0;
+score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
+let activePlayer = 0;
 let currentScore = 0;
 
 //User Rolls Dice
 btnRoll.addEventListener('click', function () {
   //1. Generate random dice number
-  const dice = Math.trunc(Math.random() * 6) + 1;
+  let dice = Math.trunc(Math.random() * 6) + 1;
 
   //2. Displey dice
   diceEl.classList.remove('hidden');
@@ -29,9 +36,15 @@ btnRoll.addEventListener('click', function () {
   if (dice !== 1) {
     //Add dice to current score
     currentScore += dice;
-    currentEl0.textContent = currentScore; //ChangeLater
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
   } else {
     //Switch player
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    currentScore = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    player0El.classList.toggle('player--active');
+    player1El.classList.toggle('player--active');
   }
 });
 

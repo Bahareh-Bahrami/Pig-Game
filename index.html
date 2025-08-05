@@ -8,6 +8,50 @@
     <title>Pig Game</title>
   </head>
   <body>
+    <button class="btn btn--how-to">❓How to play</button>
+    <div class="modal">
+      <button class="btn--close-modal">&times;</button>
+      <h1>🎲 Pig Dice Game &ndash; 2 Player Desktop Game</h1>
+      <p>
+        Pig Game is a fun two-player dice game where players take turns rolling
+        a dice to reach a total score of 100 points. The first player to reach
+        or exceed 100 wins!
+      </p>
+      
+        <h2>🕹️ How to Play:</h2>
+        <ul>
+            <li>
+              On your turn, click <strong>"Roll Dice"</strong> to roll a dice
+              <ul>
+                <li>
+                  If you roll <strong>2-6</strong>, the number is added to your <strong>current score</strong>.
+                </li>
+                <li>You can keep rolling to build up your current score.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>But be careful!</strong> If you roll a 1, you lose your
+              current score and your turn ends immediately.
+            </li>
+            <li>
+              Click <strong>"Hold"</strong> to save your current score to your
+              total score and pass the turn to the other player.
+            </li>
+            <li>
+              The <strong>first player to reach 100 points</strong> in their total score wins the
+              game.
+            </li>
+        </ul>
+
+        <h2 class="game-details_title">🧠 Strategy:</h2>
+        <p>
+          Keep rolling to build your current score, but don't get too
+          greedy—roll a 1 and you lose it all!<br />
+          Know when to <strong>Hold</strong> and when to take a risk.
+        </p>
+      </div>
+    </div>
+    <div class="overlay"></div>
     <main>
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>

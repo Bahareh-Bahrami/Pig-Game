@@ -1,5 +1,8 @@
 'use strict';
 //Selecting Elements
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 
@@ -11,11 +14,34 @@ const current1El = document.getElementById('current--1');
 
 const diceEl = document.querySelector('.dice');
 
+const btnHowTo = document.querySelector('.btn--how-to');
+const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 let activePlayer, currentScore, totalScores, playing;
+
+//How to Play Modal Window
+const openModal = function () {
+  modal.classList.add('show');
+  overlay.classList.add('show');
+};
+
+const closeModal = function () {
+  modal.classList.remove('show');
+  overlay.classList.remove('show');
+};
+
+btnHowTo.addEventListener('click', openModal);
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
 
 //Start Condition
 const init = function () {

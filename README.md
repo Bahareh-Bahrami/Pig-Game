@@ -17,4 +17,5 @@ The goal? Be the first to reach a **total score of 100** by rolling the dice. Bu
 
 ---
 
-![Game Screenshot](./screenshot.png)
+![Game Screenshot](./screenshot1.png)
+![Modal Window Screenshot](./screenshot2.png)

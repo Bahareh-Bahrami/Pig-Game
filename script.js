@@ -32,9 +32,10 @@ const init = function () {
   diceEl.classList.add('hidden');
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
-  player0El.classList.add('active--player');
-  player1El.classList.remove('active--player');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
 };
+init();
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -44,11 +45,11 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
-//User Rolls Dice
+//Rolling dice functionality
 btnRoll.addEventListener('click', function () {
   if (playing) {
     //1. Generate random dice number
-    let dice = Math.trunc(Math.random() * 6) + 1;
+    const dice = Math.trunc(Math.random() * 6) + 1;
 
     //2. Displey dice
     diceEl.classList.remove('hidden');

@@ -60,7 +60,7 @@ main {
   max-width: 100rem;
 
   background-color: white;
-  padding: clamp(2rem, 5vw, 6rem);
+  padding: 6rem;
   border-radius: 8px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
